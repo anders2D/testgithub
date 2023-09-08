@@ -2,8 +2,6 @@ name: Code Review
 
 on: [pull_request]
 
-name: ChatGPT CodeReview
-
 jobs:
   chatgpt_comment:
     runs-on: ubuntu-latest
