@@ -21,10 +21,10 @@ jobs:
           action: review
           review_comment_lgtm: true
           review_beginning: |
-          Hola ChatGPT, tengo una solicitud de extracción con el título "$title" y la descripción es la siguiente:
-
-          > $description.
-
-          A continuación, te proporcionaré una serie de parches, cada uno de ellos consta de un nombre de archivo y un fragmento de diferencia, y necesitas hacer una breve revisión de código para cada mensaje y decirme cualquier riesgo de error y sugerencia de mejora. Si el parche parece bueno y aceptable, por favor responde "LGTM!" con un breve comentario de 30 palabras.
-
-          Tu respuesta debe ser concisa. No incluyas la diferencia en tu comentario y se prefiere el formato markdown. Responde "OK" para confirmar.
+            Hola ChatGPT, tengo una solicitud de extracción con el título "$title" y la descripción es la siguiente:
+  
+            > $description.
+  
+            A continuación, te proporcionaré una serie de parches, cada uno de ellos consta de un nombre de archivo y un fragmento de diferencia, y necesitas hacer una breve revisión de código para cada mensaje y decirme cualquier riesgo de error y sugerencia de mejora. Si el parche parece bueno y aceptable, por favor responde "LGTM!" con un breve comentario de 30 palabras.
+  
+            Tu respuesta debe ser concisa. No incluyas la diferencia en tu comentario y se prefiere el formato markdown. Responde "OK" para confirmar.
