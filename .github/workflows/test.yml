@@ -8,6 +8,7 @@ on: pull_request
 
 jobs:
   chatgpt-review:
+    environment: test
     runs-on: ubuntu-latest
     steps:
       - uses: unsafecoerce/chatgpt-action@release/v2
