@@ -10,7 +10,7 @@ jobs:
       - uses: anc95/ChatGPT-CodeReview@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OPENAI_API_KEY: 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
+          OPENAI_API_KEY: "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"
           # Optional
           LANGUAGE: Chinese
           OPENAI_API_ENDPOINT: https://api.openai.com/v1
