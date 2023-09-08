@@ -1,17 +1,15 @@
+name: Sun Code Reviewer
+permissions:
+  contents: read
+  pull-requests: write
+
 on: pull_request
+
 jobs:
-  hello_world_job:
+  sun-ai-code-reviewer:
     runs-on: ubuntu-latest
-    name: ChatGPT explain code
     steps:
-      - uses: actions/checkout@v4
-      - name: Chat GPT Code Peer Review
-        uses: edelauna/gpt-review@v1
-        with:
-          # OpenAI API key used for sending patch diffs for review.
-          # Required
-          openai_api_key: ${{ secrets.openai_api_key }}
-      
-          # The target branch for the git diff to run against.
-          # Default: ${{ github.base_ref }}
-          target_branch: ${{ github.base_ref }}
+      - uses: rogeliojohnoliverio/sun-code-reviewer@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
