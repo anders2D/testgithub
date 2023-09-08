@@ -1,4 +1,4 @@
-name: test
+name: chatGPT review
 
 permissions:
   contents: read
@@ -7,8 +7,7 @@ permissions:
 on: pull_request
 
 jobs:
-  sun-ai-code-reviewer:
-    environment: "test"
+  chatgpt-review:
     runs-on: ubuntu-latest
     steps:
       - uses: unsafecoerce/chatgpt-action@release/v2
@@ -27,9 +26,8 @@ jobs:
       
             Next, I will given you a series of patches, each of them consists of a filename and a diff
             snippet, and you need to do a brief code review for every message, and tell me any bug risk
-            and improvement suggestion and a example refactor code. If the patch is looks good and acceptable, please reply "LGTM!"
+            and improvement suggestion and a concise refactor code. If the patch is looks good and acceptable, please reply "LGTM!"
             with a short comment with 30 words.
       
             You answer should be in spanish language. Don't include the diff in your comment, and markdown format is
             preferred. Reply "OK" to confirm.
-          
