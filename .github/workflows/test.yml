@@ -20,3 +20,5 @@ jobs:
           debug: false
           action: review
           review_comment_lgtm: true
+          path_filters:
+            - "*"
