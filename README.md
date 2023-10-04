@@ -21,4 +21,3 @@ Este es un repositorio de prueba para aprender cómo funciona GitHub. Puedes uti
 
 ## Licencia
 
-Este repositorio está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para obtener más detalles.
