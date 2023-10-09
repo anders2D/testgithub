@@ -1,12 +1,39 @@
-name: Code Review
+name: chatGPT review
 
-on: pull_request
+permissions:
+  contents: read
+  pull-requests: write
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
 
 jobs:
-  test:
-    # if: ${{ contains(github.event.*.labels.*.name, 'gpt review') }} # Optional; to run only when a label is attached
+  chatgpt-review:
     runs-on: ubuntu-latest
+    environment: test
     steps:
-    - name: gpt-review
-      uses: microsoft/gpt-review@v0.9.4
-            
+      - uses: unsafecoerce/chatgpt-action@release/v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        with:
+          debug: true 
+          action: review
+          review_comment_lgtm: true
+          review_beginning: |
+            Hi ChatGPT, I have a pull request with title "$title" and the description is as follows,
+      
+            > $description.
+      
+            Next, I will given you a series of patches, each of them consists of a filename and a diff
+            snippet, and you need to do a brief code review for every message, and tell me any bug risk
+            and improvement suggestion and a refactored suggestion code only if it is necessary. If the patch is looks good and acceptable, please reply "LGTM!"
+            with a short comment with 30 words.
+      
+            You answer should be short,concise and should be in spanish language. Don't include the diff in your comment, and markdown format is
+            preferred. Reply "OK" to confirm.
